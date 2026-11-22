@@ -593,44 +593,75 @@ button,select{font:inherit;color:inherit}
    ===================================================================== */
 const SETLIST = [
   { name: "Pop Bangers", poc: "Aneesh",
-    songs: [ { title: "Teeth", artist: "" } ],
-    lineup: { "Vox": "Aneesh, Ananya", "Drums": "Dakshin", "Keys": "Krishang", "Guitar 1": "Anirudh", "Guitar 2": "", "Bass": "Naitik", "Misc": "Antarip" } },
+    songs: [
+      { title: "Teeth", artist: "5 Seconds of Summer" },
+      { title: "Complicated", artist: "Avril Lavigne" },
+      { title: "Ain’t It Fun", artist: "Paramore" } ],
+    lineup: { "Vox": "Aneesh, Ananya", "Drums": "Dakshin", "Keys": "Krishang", "Guitar 1": "Anirudh", "Guitar 2": "", "Bass": "Naitik", "Misc": "Antarip (violin)" } },
 
   { name: "Coke Studio", poc: "Parag",
-    songs: [ { title: "Naina Morey", artist: "" }, { title: "Peekaboo (Coke Studio)", artist: "" } ],
-    lineup: { "Vox": "Agni, Anagha", "Drums": "Sai", "Keys": "Kailash", "Guitar 1": "Om Bisht", "Guitar 2": "Parag", "Bass": "Naitik", "Misc": "Praneeth, Martin" } },
+    songs: [
+      { title: "Naina Morey", artist: "" },
+      { title: "Peekaboo", artist: "Coke Studio" },
+      { title: "Kadi Aao", artist: "" } ],
+    lineup: { "Vox": "Agni, Satyarth", "Drums": "Sai", "Keys": "Kailash", "Guitar 1": "Om Bisht", "Guitar 2": "Parag", "Bass": "Naitik", "Misc": "Praneeth (flute), Martin (violin)" } },
 
   { name: "Jazz", poc: "Alva",
-    songs: [ { title: "What About Me?", artist: "" }, { title: "Nakamurra", artist: "" } ],
+    songs: [
+      { title: "What About Me?", artist: "Snarky Puppy" },
+      { title: "Red Room", artist: "Hiatus Kaiyote" },
+      { title: "Cosmic Girl", artist: "Jamiroquai" } ],
     lineup: { "Vox": "Anya, Shriya", "Drums": "Finnicky", "Keys": "Alva, Kailash", "Guitar 1": "Abhaya", "Guitar 2": "Parag", "Bass": "Vedang", "Misc": "" } },
 
   { name: "R&B / Indie", poc: "Finnicky",
-    songs: [ { title: "Mysight", artist: "" }, { title: "Redbone", artist: "" }, { title: "Elephant", artist: "" } ],
-    lineup: { "Vox": "Shriya, Anagha, Abhinav", "Drums": "Finnicky", "Keys": "Aryana", "Guitar 1": "Parth/Anirudh", "Guitar 2": "Sajal/Abhaya", "Bass": "Vedang", "Misc": "Anagha" } },
+    songs: [
+      { title: "Mysight", artist: "Mild Orange" },
+      { title: "Redbone", artist: "Childish Gambino" },
+      { title: "Elephant", artist: "Tame Impala" } ],
+    lineup: { "Vox": "Shriya, Anagha, Abhinav", "Drums": "Finnicky", "Keys": "Aryana", "Guitar 1": "Parth/Anirudh", "Guitar 2": "Sajal/Abhaya", "Bass": "Vedang", "Misc": "Anagha (violin)" } },
 
   { name: "Pop Metal", poc: "Om Bisht",
-    songs: [ { title: "Is It Really You", artist: "" }, { title: "Summoning", artist: "" }, { title: "Limousine", artist: "" }, { title: "Empire", artist: "" } ],
-    lineup: { "Vox": "Avi, Saket", "Drums": "Jayant", "Keys": "Aryana", "Guitar 1": "Sajal/Parth", "Guitar 2": "Om Bisht", "Bass": "Anirudh", "Misc": "Antarip" } },
+    songs: [
+      { title: "Is It Really You", artist: "Loathe" },
+      { title: "Summoning", artist: "Sleep Token" },
+      { title: "Limousine", artist: "Bring Me the Horizon" },
+      { title: "Empire", artist: "Bring Me the Horizon" } ],
+    lineup: { "Vox": "Avi, Saket", "Drums": "Jayant", "Keys": "Aryana", "Guitar 1": "Sajal/Parth", "Guitar 2": "Om Bisht", "Bass": "Anirudh", "Misc": "Antarip (violin)" } },
 
   { name: "Guitar Slot", poc: "Subbu",
-    songs: [ { title: "Physical Education", artist: "" }, { title: "Wonderful Slippery Thing", artist: "" }, { title: "For the Love of God", artist: "" } ],
+    songs: [
+      { title: "Physical Education", artist: "Animals as Leaders" },
+      { title: "Wonderful Slippery Thing", artist: "Guthrie Govan" },
+      { title: "For the Love of God", artist: "Steve Vai" } ],
     lineup: { "Vox": "", "Drums": "Sai", "Keys": "Krishang", "Guitar 1": "Subbu", "Guitar 2": "Parth/Abhaya", "Bass": "Vedang", "Misc": "" } },
 
-  { name: "90s Pop", poc: "Satyarth",
-    songs: [],
-    lineup: { "Vox": "Satyarth, Anya", "Drums": "Dakshin", "Keys": "Alva", "Guitar 1": "Raymond", "Guitar 2": "", "Bass": "Naitik", "Misc": "" } },
+  { name: "All Out 90s", poc: "Satyarth",
+    songs: [
+      { title: "Black or White", artist: "Michael Jackson" },
+      { title: "Lovefool", artist: "The Cardigans" },
+      { title: "High and Dry", artist: "Radiohead" } ],
+    lineup: { "Vox": "Satyarth, Anya", "Drums": "Dakshin", "Keys": "Alva", "Guitar 1": "Raymond", "Guitar 2": "", "Bass": "Naitik", "Misc": "Finnicky (octapad)" } },
 
   { name: "Prog", poc: "Anu",
-    songs: [ { title: "Another Day", artist: "" }, { title: "Parabola", artist: "" }, { title: "Right in Two", artist: "" } ],
+    songs: [
+      { title: "Another Day", artist: "Dream Theater" },
+      { title: "Parabola", artist: "TOOL" },
+      { title: "Blackest Eyes", artist: "Porcupine Tree" } ],
     lineup: { "Vox": "Aneesh, Anu", "Drums": "Finnicky", "Keys": "Kailash", "Guitar 1": "Subbu", "Guitar 2": "Parag", "Bass": "Naitik", "Misc": "" } },
 
   { name: "Bolly", poc: "Anirudh",
-    songs: [ { title: "Tumse Milke", artist: "" } ],
-    lineup: { "Vox": "Abhinav, Saket", "Drums": "Avi", "Keys": "Raymus", "Guitar 1": "Naitik", "Guitar 2": "", "Bass": "Anirudh", "Misc": "Praneeth, Satyarth (tabla)" } },
+    songs: [
+      { title: "Tumse Milke", artist: "" },
+      { title: "Character Dheela Hai", artist: "" },
+      { title: "Kabhi Kabhi Aditi", artist: "" } ],
+    lineup: { "Vox": "Abhinav, Saket", "Drums": "Avi", "Keys": "Raymus", "Guitar 1": "Naitik", "Guitar 2": "", "Bass": "Anirudh", "Misc": "Praneeth (violin), Satyarth (tabla)" } },
 
   { name: "Disney / Broadway", poc: "Aryana",
-    songs: [],
-    lineup: { "Vox": "Anu, Satyarth", "Drums": "Dakshin", "Keys": "Alva, Aryana", "Guitar 1": "Raymond", "Guitar 2": "Anirudh", "Bass": "Parag", "Misc": "Martin" } }
+    songs: [
+      { title: "Hopelessly Devoted to You", artist: "Olivia Newton-John" },
+      { title: "A Whole New World", artist: "Aladdin" },
+      { title: "Defying Gravity", artist: "Wicked" } ],
+    lineup: { "Vox": "Anu, Anagha", "Drums": "Dakshin", "Keys": "Alva, Aryana", "Guitar 1": "Raymond", "Guitar 2": "Anirudh", "Bass": "Parag", "Misc": "Martin (violin)" } }
 ];
 
 /* The look of each slot, in the same order: hue (0–360), background visualiser and cover drawing. */
@@ -641,7 +672,7 @@ const SLOT_STYLE = [
   { hue: 268, viz: "glow",    art: "vinyl" },     // R&B / Indie
   { hue: 336, viz: "shred",   art: "amp" },       // Pop Metal
   { hue: 292, viz: "strings", art: "guitars" },   // Guitar Slot
-  { hue: 306, viz: "blocks",  art: "cassette" },  // 90s Pop
+  { hue: 306, viz: "blocks",  art: "cassette" },  // All Out 90s
   { hue: 246, viz: "orbit",   art: "synth" },     // Prog
   { hue: 326, viz: "pulse",   art: "tabla" },     // Bolly
   { hue: 274, viz: "sparkle", art: "stage" }      // Disney / Broadway
