@@ -34,6 +34,9 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{background:var(--ink);scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 html.locked,html.locked body{overflow:hidden;height:100%}
+/* Fast flicks stop at each screen instead of flying past */
+html{scroll-snap-type:y proximity}
+.welcome,.mine,.whois,.intro,.cover,.detail,.suspense,.reveal{scroll-snap-align:start;scroll-snap-stop:always}
 body{background:var(--ink);color:var(--text);font-family:var(--body);line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:clip}
 a{color:inherit}
 button,select{font:inherit;color:inherit}
@@ -198,13 +201,13 @@ button,select{font:inherit;color:inherit}
 .mine-quip{margin-top:16px;font-family:var(--display);font-weight:600;font-size:clamp(1.15rem,2.4vw,1.9rem);color:var(--lavender);max-width:36ch}
 .mine-list{list-style:none;margin-top:clamp(34px,6vh,60px);display:grid}
 .mine-list li{--acc:hsl(var(--h) 95% 70%)}
-.mine-list a{position:relative;display:grid;grid-template-columns:auto 1fr auto;gap:4px clamp(16px,3vw,44px);align-items:center;padding:clamp(16px,2.8vh,26px) 4px;
+.mine-list .mrow{position:relative;display:grid;grid-template-columns:auto 1fr;gap:4px clamp(16px,3vw,44px);align-items:center;padding:clamp(16px,2.8vh,26px) 4px;
   border-top:1px solid hsla(var(--h),70%,78%,.2);text-decoration:none;overflow:hidden;isolation:isolate}
-.mine-list li:last-child a{border-bottom:1px solid hsla(var(--h),70%,78%,.2)}
+.mine-list li:last-child .mrow{border-bottom:1px solid hsla(var(--h),70%,78%,.2)}
 .mine-list a::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,hsla(var(--h),90%,60%,.16),transparent 70%);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease)}
 .mine-list a:hover::before,.mine-list a:focus-visible::before{transform:none}
 .mn{font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,5.4vw,4.6rem);line-height:.85;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1.5px var(--acc)}
-.mine-list a > span:nth-child(2){min-width:0}
+.mine-list .mrow > span:nth-child(2){min-width:0}
 .mname{display:block;font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(1.3rem,3vw,2.5rem);line-height:1;letter-spacing:-.02em}
 .mrole{display:block;margin-top:8px;font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--acc)}
 .mgo{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--dim);white-space:nowrap}
@@ -462,7 +465,7 @@ button,select{font:inherit;color:inherit}
   </div>
 </header>
 
-<nav class="slot-nav" id="slotNav" aria-label="Jump to a slot"></nav>
+<nav class="slot-nav" id="slotNav" aria-hidden="true" hidden></nav>
 
 <main>
   <!-- 0. Gate: nothing else on the page is reachable until a name is picked -->
@@ -654,7 +657,7 @@ const SETLIST = [
       { title: "Tumse Milke", artist: "" },
       { title: "Character Dheela Hai", artist: "" },
       { title: "Kabhi Kabhi Aditi", artist: "" } ],
-    lineup: { "Vox": "Abhinav, Saket", "Drums": "Avi", "Keys": "Raymus", "Guitar 1": "Naitik", "Guitar 2": "", "Bass": "Anirudh", "Misc": "Praneeth (violin), Satyarth (tabla)" } },
+    lineup: { "Vox": "Abhinav, Saket", "Drums": "Avi", "Keys": "Raymus", "Guitar 1": "Naitik", "Guitar 2": "", "Bass": "Anirudh", "Misc": "Praneeth (flute), Satyarth (tabla)" } },
 
   { name: "Disney / Broadway", poc: "Aryana",
     songs: [
@@ -882,7 +885,7 @@ const QUIPS = [
     let quip = QUIPS[Math.min(n, QUIPS.length - 1)];
     if (pocOf.length) quip += ` And you’re the POC for ${pocOf.map(i => SETLIST[i].name).join(" and ")}. No pressure.`;
     $("#mineQuip").textContent = quip;
-    $("#mineList").innerHTML = mineIdx.map((si, i) => `<li style="--h:${SLOT_STYLE[si % SLOT_STYLE.length].hue};--i:${i}"><a href="#slot-${pad(si + 1)}"><span class="mn">${pad(si + 1)}</span><span><span class="mname" data-fit>${esc(SETLIST[si].name)}</span><span class="mrole">${esc(personSlotText(p.slots.get(si)))}</span></span><span class="mgo">See slot ↓</span></a></li>`).join("");
+    $("#mineList").innerHTML = mineIdx.map((si, i) => `<li style="--h:${SLOT_STYLE[si % SLOT_STYLE.length].hue};--i:${i}"><div class="mrow"><span class="mn">${pad(si + 1)}</span><span><span class="mname" data-fit>${esc(SETLIST[si].name)}</span><span class="mrole">${esc(personSlotText(p.slots.get(si)))}</span></span></div></li>`).join("");
   }
 
   /* ---------- Enter / switch ---------- */
